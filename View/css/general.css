@@ -1,0 +1,100 @@
+/* 
+    Document   : general
+    Created on : 15-mar-2014, 20:21:12
+    Author     : andresprojas
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.ui-tooltip, .arrow:after {
+    background: #ebebeb;
+    border: 2px solid white;
+}
+.ui-tooltip {
+    padding: 10px 20px;
+    color: black;
+    border-radius: 10px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+}
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+.arrow.top {
+    top: -16px;
+    bottom: auto;
+}
+.arrow.left {
+    left: 20%;
+}
+.arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    tranform: rotate(45deg);
+}
+.arrow.top:after {
+    bottom: -20px;
+    top: auto;
+}
+.body{
+     text-align: center;
+     margin: auto 10%;
+     float: left;
+     margin-bottom: 2%;
+     width: 80%;
+     /*display: inline-table;*/
+}
+.right{
+    width: 60%;
+    float: left;
+    margin-top: 2%;
+    
+}
+.left{
+    /*display: inline-table;*/
+    width: 40%;
+    float: left;
+    margin-top: 2%;
+}
+@media screen and (max-width:780px){
+    .right{
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+
+    }
+    .left{
+        width: 100%;
+        margin-top: 2%;
+    }
+}
+#divTabla{
+    margin: auto 10%;
+    width: 80%;
+}
+label{
+    width: 85px;
+    display: inline-table;
+    margin-right: 1%;
+    text-align: right;
+}
