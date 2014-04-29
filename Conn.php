@@ -12,9 +12,9 @@
  */
 class Conn {
 
-    const _HOST = "localhost";
-    const _USUARIO = "root";
-    const _PASSWORD = "root";
+    const _HOST = "tunnel.pagodabox.com";
+    const _USUARIO = "marci";
+    const _PASSWORD = "OX4z9bnJ";
     const _DATABASE = "mydb";
     private $link;
     
