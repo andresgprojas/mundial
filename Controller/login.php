@@ -34,7 +34,7 @@
 //            print_r($myArray);DIE();
 //            $Pronosticos->getPronostico()
             
-            echo $username.", tu puntaje es <b>".$myArray[0]->getPronostico()."</b>-------------------";
+            echo $username.", tu puntaje es <b>".$myArray[0]->getPronostico()."</b>";
             break;
             
         case 'endSesion':

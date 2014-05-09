@@ -90,12 +90,13 @@ $(function(){
                 if(a == '0'){
                     window.location.replace("../");
                 }
-                $("#divPronosticos").html(a)
-                $("#divPronosticos").dialog({
-                    width:'80%',
-                    title: $("#partido_"+id+" a").html(),
-                    modal: true
-                })
+                $("#divPronosticos .modal-body").html(a)
+                $("#divPronosticos").modal('show')
+//                $("#divPronosticos").dialog({
+//                    width:'80%',
+//                    title: $("#partido_"+id+" a").html(),
+//                    modal: true
+//                })
                 $('#divPronosticos form').ajaxForm(options);
 
             }
@@ -109,7 +110,7 @@ $(function(){
         success: function(a){
             if (a == "0")
                 window.location.replace("../");
-            $("#divPronosticos").html(a)
+            $("#divPronosticos .modal-body").html(a)
         }
     }
     $('#divTabla').dataTable( {

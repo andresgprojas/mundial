@@ -39,7 +39,7 @@
                                 "Puntos Otorgados: ".$objeto->getPuntos()."<br>";
                     if ($objeto->getValores()!='-'){
                         $select = explode(',', $objeto->getValores());
-                        $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]'>";
+                        $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control'>";
                         $htmlSel .= "<option value='-'>--</option>";
                         foreach ($select as $valor) {
                             $htmlSel .= "<option value='{$valor}'>{$valor}</option>";
@@ -51,7 +51,7 @@
                     }
                     $htmlSel .= "</fieldset>";
                 }
-                $htmlSel .= '<input type="submit" value="Terminar">';
+                $htmlSel .= '<input type="submit" value="Terminar" class="btn btn-lg btn-success btn-block">';
                 /*++++++++++++++++++FIN (CUANDO NO SE HAN CARGADO PRONOSTICOS PARA UN PARTIDO)++++++++++++++++++++++++*/
             }
             else{
@@ -109,7 +109,7 @@ else{
                                 
                             if ($objeto->getValores()!='-'){
                                 $select = explode(',', $objeto->getValores());
-                                $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]'>";
+                                $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control'>";
                                 $htmlSel .= "<option value='-'>--</option>";
                                 foreach ($select as $valor) {
                                     $SEL = ($rtaPronP[0]->getPronostico() == $valor)?"selected='selected'":"";

@@ -57,9 +57,9 @@ root {
     top: auto;
 }
 .body{
-     text-align: center;
+     /*text-align: center;*/
      margin: auto 10%;
-     float: left;
+     /*float: left;*/
      margin-bottom: 2%;
      width: 80%;
      /*display: inline-table;*/

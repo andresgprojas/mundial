@@ -25,7 +25,7 @@
                 }
 
                 $html .= "<div id='partido_{$value->getCodPartido()}'>";
-                $html .= "<a href='#' onclick='verCriterios({$value->getCodPartido()})' title='Hora: {$value->getHora()}'>";
+                $html .= "<a href='#' onclick='verCriterios({$value->getCodPartido()}); return false' title='Hora: {$value->getHora()}'>";
                 $html .= utf8_encode($value->getEquipos_CodEq1())." vs ";
                 $html .= utf8_encode($value->getEquipos_CodEq2());
                 $html .= "</a>";
