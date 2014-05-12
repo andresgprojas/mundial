@@ -65,9 +65,10 @@ root {
      /*display: inline-table;*/
 }
 .right{
-    width: 60%;
+    width: 58%;
     float: left;
     margin-top: 2%;
+    margin-left: 2%;
     
 }
 .left{
@@ -81,7 +82,7 @@ root {
         width: 100%;
         margin-top: 2%;
         margin-bottom: 2%;
-
+        margin-left: 0;
     }
     .left{
         width: 100%;
@@ -89,8 +90,11 @@ root {
     }
 }
 #divTabla{
-    margin: auto 10%;
-    width: 80%;
+    margin: 0 auto;
+    /*width: 80% !important;*/
+}
+.pagination li a{
+    font-size: 11px;
 }
 label{
     width: 85px;

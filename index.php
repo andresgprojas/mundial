@@ -25,9 +25,9 @@
                         type:   'POST',
                         url:    'Controller/login',
                         data:{
-                                'nick': nick,
-                                'pass': pass,
-                                'action':'login'
+                            'nick': nick,
+                            'pass': pass,
+                            'action':'login'
                         },
                         success: function(a){
                             if (a=='1'){
@@ -49,10 +49,10 @@
                         type:   'POST',
                         url:    'Controller/login',
                         data:{
-                                'action': 'save',
-                                'nick': nick,
-                                'pass': pass,
-                                'iden': id
+                            'action': 'save',
+                            'nick': nick,
+                            'pass': pass,
+                            'iden': id
                         },
                         success: function(a){
                             $("#divRegistrar .modal-body").html(a)
@@ -61,48 +61,48 @@
                 })
               
             })
-    </script>
-    <style>
-        .boxlogin{
-            margin: 50px auto;
-            width: 320px;
-            box-shadow: 0px 2px 10px #d6d6d6;
-            border-radius: 4px;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 10px;
-        }
-        .myMiddle{
-            border-radius: 0px !important;
-            margin-top: -1px;
-        }
-        .myBottom{
-            border-top-left-radius: 0px !important;
-            border-top-right-radius: 0px !important;
-        }
-        .myTop{
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-        }
-        input[type="password"]{
-            margin-top: -1px;
-        }
-        input[type="button"]{
-            margin-top: 15px;
-        }
-        input::-webkit-input-placeholder:before{
-            font-weight: bold;
-        }
-        input::-webkit-input-placeholder{
-            font-style: italic;
-        }
-        input:-moz-placeholder:before {
-            font-weight: bold;
-        }
-        input:-moz-placeholder {
-            font-style: italic;
-        }
-    </style>
-           
+        </script>
+        <style>
+            .boxlogin{
+                margin: 50px auto;
+                width: 320px;
+                box-shadow: 0px 2px 10px #d6d6d6;
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 10px;
+            }
+            .myMiddle{
+                border-radius: 0px !important;
+                margin-top: -1px;
+            }
+            .myBottom{
+                border-top-left-radius: 0px !important;
+                border-top-right-radius: 0px !important;
+            }
+            .myTop{
+                border-bottom-left-radius: 0px !important;
+                border-bottom-right-radius: 0px !important;
+            }
+            input[type="password"]{
+                margin-top: -1px;
+            }
+            input[type="button"]{
+                margin-top: 15px;
+            }
+            input::-webkit-input-placeholder:before{
+                font-weight: bold;
+            }
+            input::-webkit-input-placeholder{
+                font-style: italic;
+            }
+            input:-moz-placeholder:before {
+                font-weight: bold;
+            }
+            input:-moz-placeholder {
+                font-style: italic;
+            }
+        </style>
+
     </head>
     <body>
         <div class="jumbotron boxlogin">
@@ -112,30 +112,39 @@
             <input type="button" value="Acceder" id="login" class="btn btn-lg btn-primary btn-block">
             <a href="#" id="linkRegistro" class="btn btn-lg btn-success btn-block">Registrarse</a>
         </div>
-        <div id="salida" class="modal fade in" style="display: none;">
-            <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h3>Problemas para acceder</h3>
+        <div id="salida" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Problemas para acceder</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-              <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
-            </div>
-          </div>
-        <div id="divRegistrar" class="modal fade in" style="display: none;">
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">×</a>
-                <h3>Crear Usuario</h3>
-            </div>
-            <div class="modal-body">
-                <input type="text" name="username" id="username"  class="form-control myTop" placeholder="Nickname">
-                <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificación">
-                <input type="password" name="contra" id="contra"  class="form-control myBottom" placeholder="Password">
-                <input type="button" value="Registrar" id="btnRegistrar" class="btn btn-primary">
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+        </div>
+
+        <div id="divRegistrar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Crear Usuario</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="username" id="username"  class="form-control myTop" placeholder="Nickname">
+                        <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificación">
+                        <input type="password" name="contra" id="contra"  class="form-control myBottom" placeholder="Password">
+                        <input type="button" value="Registrar" id="btnRegistrar" class="btn btn-primary">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

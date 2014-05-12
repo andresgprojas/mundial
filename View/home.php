@@ -15,9 +15,9 @@
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
         <script src="js/functions.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!--<link href="View/css/bootstrap.css" rel="stylesheet" media="screen">-->
         <link href="../View/css/bootstrap.css" rel="stylesheet" media="screen">
         <script src="../View/js/bootstrap.min.js"></script>
+        <script src="../View/js/dataTables.bootstrap.js"></script>
         <style>
             body{
                 height: 1000px;
@@ -25,20 +25,23 @@
         </style>
     </head>
     <body>
-        <div id="divPronosticos" class="modal fade in" style="display: none;">
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">×</a>
-                <h3>Cargar Pronósticos</h3>
-            </div>
-            <div class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+        <div id="divPronosticos" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Cargar Pronósticos</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="body">
-            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -59,31 +62,45 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="page-header">
-            <h1>Bienvenido <span id="nick"></span></h1>
-        </div>
+        <div class="body">
+            <div class="page-header">
+                <h1>Bienvenido <span id="nick"></span></h1>
+            </div>
             <div class="left">
-                <div id="divPartidos"></div>
-
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">PARTIDOS</div>
+                    <div class="panel-body">
+                        <p>Partidos de la primera ronda. El horario que se muestra en la hora local (Brasil)</p>
+                    </div>
+                    <div class="panel-group" id="accordion"></div>
+                </div>
             </div>
             <div class="right">
-                <table id="divTabla">
-                    <thead>
-                        <tr>
-                            <th>Nick</th>
-                            <th>Acumulado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="5" class="dataTables_empty">Loading data from server</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">TABLA DE POSICIONES</div>
+                    <div class="panel-body">
+                        <p>Las siguientes son las posiciones según el acumulado de aciertos en cada uno de los criteros de los partidos ya cerrados</p>
+                    </div>
 
+                    <!-- Table -->
+                    <table id="divTabla" class="table">
+                        <thead>
+                            <tr>
+                                <th>Nick</th>
+                                <th>Acumulado</th>
+                                <th>Posición</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="dataTables_empty">Loading data from server</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-<!--        <div id="divPronosticos"></div>-->
     </body>
 </html>
-	

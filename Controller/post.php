@@ -47,6 +47,9 @@
 			$sOrder = "";
 		}
 	}
+        else{
+            $sOrder = "ORDER BY Acumulado DESC, Nick ASC";
+        }
 	
 	
 	/* 
@@ -149,7 +152,7 @@
 //		"iTotalDisplayRecords" => '7',
 		"aaData" => array()
 	);
-	
+	$c = $_POST['iDisplayStart'];
 	while ( $aRow = mysql_fetch_array( $rResult ) )
 	{
 		$row = array();
@@ -166,6 +169,7 @@
 				$row[] = $aRow[ $aColumns[$i] ];
 			}
 		}
+                $row[2] = ++$c;
 		$output['aaData'][] = $row;
 	}
 	

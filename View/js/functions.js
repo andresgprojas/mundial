@@ -8,7 +8,25 @@ $(function(){
         
         $('#divTabla').dataTable().fnDestroy();
         $('#divTabla').dataTable( {
+            "bSort": false,
+            "bFilter": false,
+            "bLengthChange": false,
+            "aoColumns": [
+      
+            {
+                "sWidth": "20%"
+            },
+            {
+                "sWidth": "10%"
+            },
+            {
+                "sWidth": "15%", 
+                "sClass" : "text-center"
+            },
+      
+            ],
             "bProcessing": true,
+            "bSort": false,
             "bServerSide": true,
             "sAjaxSource": "../Controller/post"
         } );
@@ -68,8 +86,8 @@ $(function(){
                         if (a == "0"){
                             window.location.replace("../");
                         }
-                        $("#divPartidos").html(a)
-                        creaAccordion('divPartidos')
+                        $("#accordion").html(a)
+                        $(".panel-body a").tooltip()
 
                     }
                 })
@@ -92,11 +110,11 @@ $(function(){
                 }
                 $("#divPronosticos .modal-body").html(a)
                 $("#divPronosticos").modal('show')
-//                $("#divPronosticos").dialog({
-//                    width:'80%',
-//                    title: $("#partido_"+id+" a").html(),
-//                    modal: true
-//                })
+                //                $("#divPronosticos").dialog({
+                //                    width:'80%',
+                //                    title: $("#partido_"+id+" a").html(),
+                //                    modal: true
+                //                })
                 $('#divPronosticos form').ajaxForm(options);
 
             }
@@ -115,8 +133,27 @@ $(function(){
     }
     $('#divTabla').dataTable( {
         "bProcessing": true,
+        "bSort": false,
+        "bFilter": false,
+        "bLengthChange": false,
         "bServerSide": true,
-        "sAjaxSource": "../Controller/post"
+        "sAjaxSource": "../Controller/post",
+        "aoColumns": [
+      
+        {
+            "sWidth": "20%", 
+            "sClass" : "text-center"
+        },
+        {
+            "sWidth": "10%", 
+            "sClass" : "text-center"
+        },
+        {
+            "sWidth": "15%", 
+            "sClass" : "text-center"
+        },
+      
+        ]
     } );
     
     

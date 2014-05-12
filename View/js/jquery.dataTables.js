@@ -7967,7 +7967,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 5, 10, 15, 20, 25 ],
+		"aLengthMenu": [ 10, 15, 20, 25 ],
 	
 	
 		/**
@@ -9036,7 +9036,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 5,
+		"iDisplayLength": 10,
 	
 	
 		/**
