@@ -38,7 +38,7 @@ switch ($action) {
                         '<div class="panel-heading">' . $nombreCri . '</div>' .
                         '<div class="panel-body"><p>' .
                         "Descripcion: " . $regla . "<br>" .
-                        "Puntos otorgados por acierto: " . $objeto->getPuntos() . "<br>";
+                        "Puntos a otorgar: " . $objeto->getPuntos() . "<br>";
                 if ($objeto->getValores() != '-') {
                     $select = explode(',', $objeto->getValores());
                     $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control'>";
@@ -83,7 +83,7 @@ switch ($action) {
                                 '<div class="panel-heading">' . $nombreCri . '</div>' .
                                 '<div class="panel-body">' .
                                 'Descripcion: ' . $regla . '<br>' .
-                                'Puntos otorgados por acierto: ' . $objeto->getPuntos() . '<br>' .
+                                'Puntos a otorgar: ' . $objeto->getPuntos() . '<br>' .
                                 'Pronostico hecho: ' . $pron .
                                 '</div>' .
                                 '</div>';
@@ -108,7 +108,7 @@ switch ($action) {
                             '<div class="panel-heading">' . $nombreCri . '</div>' .
                             '<div class="panel-body"><p>' .
                             "Descripcion: " . $regla . "<br>" .
-                            "Puntos Otorgados: " . $objeto->getPuntos() . "<br>";
+                            "Puntos a otorgar: " . $objeto->getPuntos() . "<br>";
 
                     if ($objeto->getValores() != '-') {
                         $select = explode(',', $objeto->getValores());

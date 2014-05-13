@@ -3,44 +3,42 @@
  * and open the template in the editor.
  */
 
-$(function(){
-    setInterval(function(){
-        
+$(function() {
+    setInterval(function() {
+
         $('#divTabla').dataTable().fnDestroy();
-        $('#divTabla').dataTable( {
+        $('#divTabla').dataTable({
             "bSort": false,
             "bFilter": false,
             "bLengthChange": false,
             "aoColumns": [
-      
-            {
-                "sWidth": "20%"
-            },
-            {
-                "sWidth": "10%"
-            },
-            {
-                "sWidth": "15%", 
-                "sClass" : "text-center"
-            },
-      
+                {
+                    "sWidth": "20%"
+                },
+                {
+                    "sWidth": "10%"
+                },
+                {
+                    "sWidth": "15%",
+                    "sClass": "text-center"
+                },
             ],
             "bProcessing": true,
             "bSort": false,
-            "bServerSide": true,
+                    "bServerSide": true,
             "sAjaxSource": "../Controller/post"
-        } );
-    },600000);
-    
-    $(".endSesion").click(function(){
+        });
+    }, 600000);
+
+    $(".endSesion").click(function() {
         $.ajax({
-            type:   'POST',
-            url:    '../Controller/login',
-            data:{
+            type: 'POST',
+            url: '../Controller/login',
+            data: {
                 'action': 'endSesion'
             },
-            success: function(a){
-                if (a=="1"){
+            success: function(a) {
+                if (a == "1") {
                     window.location.replace("../");
                 }
             }
@@ -50,45 +48,48 @@ $(function(){
         position: {
             my: "center bottom-20",
             at: "center top",
-            using: function( position, feedback ) {
-                $( this ).css( position );
-                $( "<div>" )
-                .addClass( "arrow" )
-                .addClass( feedback.vertical )
-                .addClass( feedback.horizontal )
-                .appendTo( this );
+            using: function(position, feedback) {
+                $(this).css(position);
+                $("<div>")
+                        .addClass("arrow")
+                        .addClass(feedback.vertical)
+                        .addClass(feedback.horizontal)
+                        .appendTo(this);
             }
         }
     });
-    creaAccordion = function(_div){
-        $('#'+_div).accordion({
+    creaAccordion = function(_div) {
+        $('#' + _div).accordion({
             heightStyle: "content"
         });
-        $('#'+_div).accordion("option", "icons", null);
+        $('#' + _div).accordion("option", "icons", null);
     }
     $.ajax({
-        type:   'POST',
-        url:    '../Controller/login',
-        data:{
+        type: 'POST',
+        url: '../Controller/login',
+        data: {
             'action': 'sesion'
         },
-        success: function(a){
+        beforeSend: function() {
+            $(".gray").css({'display': 'fixed'})
+        },
+        success: function(a) {
             if (a == '0')
                 window.location.replace("../");
-            else{
+            else {
                 $.ajax({
-                    type:   'POST',
-                    url:    '../Controller/partidos',
-                    data:{
+                    type: 'POST',
+                    url: '../Controller/partidos',
+                    data: {
                         'action': 'loadAll'
                     },
-                    success: function(a){
-                        if (a == "0"){
+                    success: function(a) {
+                        if (a == "0") {
                             window.location.replace("../");
                         }
                         $("#accordion").html(a)
                         $(".panel-body a").tooltip()
-
+                        $(".gray").css({'display': 'none'})
                     }
                 })
             }
@@ -96,42 +97,46 @@ $(function(){
 
         }
     })
-    verCriterios = function(id){
+    verCriterios = function(id) {
         $.ajax({
-            type:   'POST',
-            url:    '../Controller/getPuntos',
-            data:{
+            type: 'POST',
+            url: '../Controller/getPuntos',
+            data: {
                 'action': 'loadView',
                 'partido': id
             },
-            success: function(a){
-                if(a == '0'){
+            beforeSend: function() {
+                $(".gray").css({'display': 'fixed'})
+            },
+            success: function(a) {
+                if (a == '0') {
                     window.location.replace("../");
                 }
                 $("#divPronosticos .modal-body").html(a)
                 $("#divPronosticos").modal('show')
-                //                $("#divPronosticos").dialog({
-                //                    width:'80%',
-                //                    title: $("#partido_"+id+" a").html(),
-                //                    modal: true
-                //                })
+                $(".gray").css({'display': 'none'})
                 $('#divPronosticos form').ajaxForm(options);
 
             }
         })
         return false;
     }
-    $("#divPronosticos").click(function(){
-                    
-        })
+    $("#divPronosticos").click(function() {
+
+    })
     var options = {
-        success: function(a){
+        success: function(a) {
             if (a == "0")
                 window.location.replace("../");
             $("#divPronosticos .modal-body").html(a)
+            $(".gray").css({'display': 'none'})
+        },
+        beforeSend: function() {
+//    alert('a')
+            $(".gray").css({'display': 'fixed'})
         }
     }
-    $('#divTabla').dataTable( {
+    $('#divTabla').dataTable({
         "bProcessing": true,
         "bSort": false,
         "bFilter": false,
@@ -139,25 +144,23 @@ $(function(){
         "bServerSide": true,
         "sAjaxSource": "../Controller/post",
         "aoColumns": [
-      
-        {
-            "sWidth": "20%", 
-            "sClass" : "text-center"
-        },
-        {
-            "sWidth": "10%", 
-            "sClass" : "text-center"
-        },
-        {
-            "sWidth": "15%", 
-            "sClass" : "text-center"
-        },
-      
+            {
+                "sWidth": "20%",
+                "sClass": "text-center"
+            },
+            {
+                "sWidth": "10%",
+                "sClass": "text-center"
+            },
+            {
+                "sWidth": "15%",
+                "sClass": "text-center"
+            },
         ]
-    } );
-    
-    
-    
+    });
+
+
+
 //    index-------------------------------
 
 })
