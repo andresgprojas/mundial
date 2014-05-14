@@ -112,54 +112,54 @@ CREATE TABLE `partidos` (
 -- ----------------------------
 -- Records of partidos
 -- ----------------------------
-INSERT INTO `partidos` VALUES ('1', '', 'BRA', 'CRO', '2014-06-12', '17:00:00', '0');
-INSERT INTO `partidos` VALUES ('2', '', 'MEX', 'CMR', '2014-06-13', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('3', '', 'ESP', 'NED', '2014-06-13', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('4', '', 'CHI', 'AUS', '2014-06-13', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('5', '', 'COL', 'GRE', '2014-06-14', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('6', '', 'CIV', 'JPN', '2014-06-14', '22:00:00', '1');
-INSERT INTO `partidos` VALUES ('7', '', 'URU', 'CRC', '2014-06-14', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('8', '', 'ENG', 'ITA', '2014-06-14', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('9', '', 'SUI', 'ECU', '2014-06-15', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('10', '', 'FRA', 'HON', '2014-06-15', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('11', '', 'ARG', 'BIH', '2014-06-15', '19:00:00', '1');
-INSERT INTO `partidos` VALUES ('12', '', 'IRN', 'NGA', '2014-06-16', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('13', '', 'GER', 'POR', '2014-06-16', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('14', '', 'GHA', 'USA', '2014-06-16', '19:00:00', '1');
-INSERT INTO `partidos` VALUES ('15', '', 'BEL', 'ALG', '2014-06-17', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('16', '', 'RUS', 'KOR', '2014-06-17', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('17', '', 'BRA', 'MEX', '2014-06-17', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('18', '', 'CMR', 'CRO', '2014-06-18', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('19', '', 'ESP', 'CHI', '2014-06-18', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('20', '', 'AUS', 'NED', '2014-06-18', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('21', '', 'COL', 'CIV', '2014-06-19', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('22', '', 'JPN', 'GRE', '2014-06-19', '19:00:00', '1');
-INSERT INTO `partidos` VALUES ('23', '', 'URU', 'ENG', '2014-06-19', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('24', '', 'ITA', 'CRC', '2014-06-20', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('25', '', 'SUI', 'FRA', '2014-06-20', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('26', '', 'HON', 'ECU', '2014-06-20', '19:00:00', '1');
-INSERT INTO `partidos` VALUES ('27', '', 'ARG', 'IRN', '2014-06-21', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('28', '', 'NGA', 'BIH', '2014-06-21', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('29', '', 'GER', 'GHA', '2014-06-21', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('30', '', 'USA', 'POR', '2014-06-22', '18:00:00', '1');
-INSERT INTO `partidos` VALUES ('31', '', 'BEL', 'RUS', '2014-06-22', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('32', '', 'KOR', 'ALG', '2014-06-22', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('33', '', 'CMR', 'BRA', '2014-06-23', '17:00:00', '1');
-INSERT INTO `partidos` VALUES ('34', '', 'CRO', 'MEX', '2014-06-23', '17:00:00', '1');
-INSERT INTO `partidos` VALUES ('35', '', 'AUS', 'ESP', '2014-06-23', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('36', '', 'NED', 'CHI', '2014-06-23', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('37', '', 'JPN', 'COL', '2014-06-24', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('38', '', 'GRE', 'CIV', '2014-06-24', '17:00:00', '1');
-INSERT INTO `partidos` VALUES ('39', '', 'ITA', 'URU', '2014-06-24', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('40', '', 'CRC', 'ENG', '2014-06-24', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('41', '', 'HON', 'SUI', '2014-06-25', '16:00:00', '1');
-INSERT INTO `partidos` VALUES ('42', '', 'ECU', 'FRA', '2014-06-25', '17:00:00', '1');
-INSERT INTO `partidos` VALUES ('43', '', 'NGA', 'ARG', '2014-06-25', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('44', '', 'BIH', 'IRN', '2014-06-25', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('45', '', 'USA', 'GER', '2014-06-26', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('46', '', 'POR', 'GHA', '2014-06-26', '13:00:00', '1');
-INSERT INTO `partidos` VALUES ('47', '', 'KOR', 'BEL', '2014-06-26', '17:00:00', '1');
-INSERT INTO `partidos` VALUES ('48', '', 'ALG', 'RUS', '2014-06-26', '17:00:00', '1');
+INSERT INTO `partidos` VALUES ('1', '', 'BRA', 'CRO', '2014-06-12','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('2', '', 'MEX', 'CMR', '2014-06-13','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('3', '', 'ESP', 'NED', '2014-06-13','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('4', '', 'CHI', 'AUS', '2014-06-13','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('5', '', 'COL', 'GRE', '2014-06-14','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('6', '', 'CIV', 'JPN', '2014-06-14','20:00:00', '1')
+INSERT INTO `partidos` VALUES ('7', '', 'URU', 'CRC', '2014-06-14','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('8', '', 'ENG', 'ITA', '2014-06-14','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('9', '', 'SUI', 'ECU', '2014-06-15','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('10', '', 'FRA', 'HON', '2014-06-15','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('11', '', 'ARG', 'BIH', '2014-06-15','17:00:00', '1')
+INSERT INTO `partidos` VALUES ('12', '', 'IRN', 'NGA', '2014-06-16','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('13', '', 'GER', 'POR', '2014-06-16','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('14', '', 'GHA', 'USA', '2014-06-16','17:00:00', '1')
+INSERT INTO `partidos` VALUES ('15', '', 'BEL', 'ALG', '2014-06-17','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('16', '', 'RUS', 'KOR', '2014-06-17','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('17', '', 'BRA', 'MEX', '2014-06-17','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('18', '', 'CMR', 'CRO', '2014-06-18','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('19', '', 'ESP', 'CHI', '2014-06-18','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('20', '', 'AUS', 'NED', '2014-06-18','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('21', '', 'COL', 'CIV', '2014-06-19','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('22', '', 'JPN', 'GRE', '2014-06-19','17:00:00', '1')
+INSERT INTO `partidos` VALUES ('23', '', 'URU', 'ENG', '2014-06-19','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('24', '', 'ITA', 'CRC', '2014-06-20','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('25', '', 'SUI', 'FRA', '2014-06-20','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('26', '', 'HON', 'ECU', '2014-06-20','17:00:00', '1')
+INSERT INTO `partidos` VALUES ('27', '', 'ARG', 'IRN', '2014-06-21','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('28', '', 'NGA', 'BIH', '2014-06-21','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('29', '', 'GER', 'GHA', '2014-06-21','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('30', '', 'USA', 'POR', '2014-06-22','16:00:00', '1')
+INSERT INTO `partidos` VALUES ('31', '', 'BEL', 'RUS', '2014-06-22','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('32', '', 'KOR', 'ALG', '2014-06-22','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('33', '', 'CMR', 'BRA', '2014-06-23','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('34', '', 'CRO', 'MEX', '2014-06-23','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('35', '', 'AUS', 'ESP', '2014-06-23','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('36', '', 'NED', 'CHI', '2014-06-23','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('37', '', 'JPN', 'COL', '2014-06-24','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('38', '', 'GRE', 'CIV', '2014-06-24','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('39', '', 'ITA', 'URU', '2014-06-24','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('40', '', 'CRC', 'ENG', '2014-06-24','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('41', '', 'HON', 'SUI', '2014-06-25','14:00:00', '1')
+INSERT INTO `partidos` VALUES ('42', '', 'ECU', 'FRA', '2014-06-25','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('43', '', 'NGA', 'ARG', '2014-06-25','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('44', '', 'BIH', 'IRN', '2014-06-25','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('45', '', 'USA', 'GER', '2014-06-26','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('46', '', 'POR', 'GHA', '2014-06-26','11:00:00', '1')
+INSERT INTO `partidos` VALUES ('47', '', 'KOR', 'BEL', '2014-06-26','15:00:00', '1')
+INSERT INTO `partidos` VALUES ('48', '', 'ALG', 'RUS', '2014-06-26','15:00:00', '1')
 
 -- ----------------------------
 -- Table structure for `pronosticos`
@@ -264,10 +264,14 @@ CREATE TABLE `puntos` (
 -- ----------------------------
 -- Records of puntos
 -- ----------------------------
-INSERT INTO `puntos` VALUES ('1', 'Tarjetas Amarillas', 'Acertar al total de las tarjetas amarillas', '2', '0,1,2,3,4,5,6,8,9');
-INSERT INTO `puntos` VALUES ('2', 'Tarjetas Rojas', 'Acertar al total de las tarjetas Rojas', '2', '0,1,2,3,4,5,6');
-INSERT INTO `puntos` VALUES ('5', 'Marcador $eq1', 'Acertar al marcador de $eq1', '4', '0,1,2,3,4,5,6,7,8,9,10');
-INSERT INTO `puntos` VALUES ('6', 'Marcador $eq2', 'Acertar al marcador de $eq2', '4', '0,1,2,3,4,5,6,7,8,9,10');
+INSERT INTO `puntos` VALUES ('1', 'Marcador $eq1', 'Acertar al marcador de $eq1', '5', '0,1,2,3,4,5,6,7,8,9,10');
+INSERT INTO `puntos` VALUES ('2', 'Marcador $eq2', 'Acertar al marcador de $eq2', '5', '0,1,2,3,4,5,6,7,8,9,10');
+INSERT INTO `puntos` VALUES ('3', 'Tarjetas Amarillas', 'Acertar al total de las tarjetas amarillas', '3', '0-2,3-5,6-8,9-11,12-14');
+INSERT INTO `puntos` VALUES ('4', 'Tarjetas Rojas', 'Acertar al total de las tarjetas Rojas', '3', '0,1,2,3,4,5');
+INSERT INTO `puntos` VALUES ('5', 'Fueras de Lugar', 'Acertar al total de fueras de lugar', '2', '0-2,3-5,6-8,9-11,12-14');
+INSERT INTO `puntos` VALUES ('6', 'Faltas', 'Acertar al total de faltas', '2', '0-2,3-5,6-8,9-11,12-14');
+INSERT INTO `puntos` VALUES ('7', 'Tiros de Esquina', 'Acertar al total de tiros de esquina', '1', '0-2,3-5,6-8,9-11,12-14');
+INSERT INTO `puntos` VALUES ('8', 'Remates al Arco', 'Acertar al total de remates al arco', '1', '0-5,6-10,11-15,16-20,21-25,26-30');
 
 -- ----------------------------
 -- Table structure for `resultados`
@@ -287,7 +291,7 @@ CREATE TABLE `resultados` (
 -- ----------------------------
 -- Records of resultados
 -- ----------------------------
-INSERT INTO `resultados` VALUES ('1', '1', '0');
-INSERT INTO `resultados` VALUES ('1', '2', '3');
-INSERT INTO `resultados` VALUES ('1', '5', '1');
-INSERT INTO `resultados` VALUES ('1', '6', '0');
+INSERT INTO `resultados` VALUES ('1', '3', '0-2');
+INSERT INTO `resultados` VALUES ('1', '4', '3');
+INSERT INTO `resultados` VALUES ('1', '1', '1');
+INSERT INTO `resultados` VALUES ('1', '2', '0');
