@@ -123,7 +123,7 @@ class Partidos{
                 "INNER JOIN ".
                     $Equipos::Tabla. " e ON a.Equipos_CodEq1 = e.CodEq ".
                 "INNER JOIN ".
-                    $Equipos::Tabla. "Equipos e2 ON a.Equipos_CodEq2 = e2.CodEq ".
+                    $Equipos::Tabla. " e2 ON a.Equipos_CodEq2 = e2.CodEq ".
                 "ORDER BY Fecha,hora ASC";
         $qry = mysql_query($str) or die(mysql_error());
         
