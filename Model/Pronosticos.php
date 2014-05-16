@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require_once '../cab.inc.php';
 
@@ -53,6 +54,8 @@ class Pronosticos {
 
         
     public function getByFilter($filtro = array()){
+        $Puntos     = new Puntos();
+        $Partidos   = new Partidos();
         $conn = new Conn();
         $conn->conectar();
         $filter = "WHERE ";
@@ -62,8 +65,8 @@ class Pronosticos {
         $filter = substr($filter, 0, -4);
         
         $str = "SELECT a.* FROM ".$this::Tabla." a ".
-                "INNER JOIN Puntos pn ON a.Puntos_CodPron = pn.CodPron ".
-                "INNER JOIN Partidos pa ON pa.CodPartido = a.Partidos_CodPartido ".
+                "INNER JOIN ".$Puntos::Tabla." pn ON a.Puntos_CodPron = pn.CodPron ".
+                "INNER JOIN ".$Partidos::Tabla." pa ON pa.CodPartido = a.Partidos_CodPartido ".
                 "{$filter}";
         $qry = mysql_query($str) or die(mysql_error());
         
