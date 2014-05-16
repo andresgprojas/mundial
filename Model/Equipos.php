@@ -17,7 +17,7 @@ class Equipos {
     private $CodEq;
     private $NomEq;
     private $Grupo;
-    const Tabla = "Equipos";
+    const Tabla = "equipos";
 
     public function getCodEq() {
         return $this->CodEq;

@@ -18,7 +18,7 @@ class Pronosticos {
     private $Partidos_CodPartido;
     private $Puntos_CodPron;
     private $Pronostico;
-    const Tabla = "Pronosticos";
+    const Tabla = "pronosticos";
     public function getNickName_Nick() {
         return $this->NickName_Nick;
     }
@@ -144,12 +144,19 @@ class Pronosticos {
                 "GROUP BY N.Nick ".
                 "ORDER BY Acumulado DESC;";
         $qry = mysql_query($str);
-        $array = array();
-        while($row = mysql_fetch_assoc($qry)){
-            $myClass = new Pronosticos();
-            $myClass->setNickName_Nick($row['Nick']);
-            $myClass->setPronostico($row['Acumulado']);
-            array_push($array, $myClass);
+        if (mysql_num_rows($qry)>0){
+            $array = array();
+            while($row = mysql_fetch_assoc($qry)){
+                $myClass = new Pronosticos();
+                $myClass->setNickName_Nick($row['Nick']);
+                $myClass->setPronostico($row['Acumulado']);
+                array_push($array, $myClass);
+            }
+        }
+        else{
+                $myClass = new Pronosticos();
+                $myClass->setPronostico("0");
+                $array = array($myClass);
         }
         $conn->cerrar();
         return $array;

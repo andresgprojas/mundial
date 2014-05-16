@@ -19,7 +19,7 @@ class Puntos {
     private $ReglaPron;
     private $Puntos;
     private $Valores;
-    const Tabla = "Puntos";
+    const Tabla = "puntos";
 
 
     public function getCodPron() {

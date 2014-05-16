@@ -17,7 +17,7 @@ class Resultados {
     private $Partidos_CodPartido;
     private $Puntos_CodPron;
     private $Resultado;
-    const Tabla = "Resultados";
+    const Tabla = "resultados";
 
 
     public function getPartidos_CodPartido() {

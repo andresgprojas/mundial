@@ -18,7 +18,7 @@ class NickName {
     private $ID;
     private $PWD;
     private $Pago;
-    const Tabla = "NickName";
+    const Tabla = "nickname";
     
 
 
