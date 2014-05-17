@@ -94,12 +94,14 @@ class Pronosticos {
         $str = "INSERT INTO ".$this::Tabla." (NickName_Nick, Partidos_CodPartido, Pronostico, Puntos_CodPron) VALUES ('$this->NickName_Nick', '{$this->Partidos_CodPartido}', '{$this->Pronostico}', '{$this->Puntos_CodPron}')";
         $qry = mysql_query($str);
         
+        if ($qry === TRUE)
+            $return = mysql_insert_id();
+        else
+            $return = FALSE;
+        
         $conn->cerrar();
         
-        if ($qry === TRUE)
-            return mysql_insert_id();
-        
-        return FALSE;
+        return $return;
     }
     
     public function updateRegistro(){
