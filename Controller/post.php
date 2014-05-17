@@ -102,19 +102,23 @@
         else{
             $sWhere .= " AND N.Pago = '1' ";
         }
+        $Nick       = new NickName();
+        $Pronostico = new Pronosticos();
+        $Resultado  = new Resultados();
+        $Punto      = new Puntos();
         $sQuery = "
 		SELECT ".
                 "N.Nick, " .
                 "SUM(IF(R.Resultado = P.Pronostico, PTS.Puntos ,'0')) AS Acumulado " .
-                "FROM NickName N " .
-                "LEFT JOIN Pronosticos P ".
+                "FROM ".$Nick::Tabla." N " .
+                "LEFT JOIN ".$Pronostico::Tabla." P ".
                 "ON ".
                     "P.NickName_Nick = N.Nick " .
-                "LEFT JOIN Resultados R " .
+                "LEFT JOIN ".$Resultado::Tabla." R " .
                 "ON " .
                     "R.Partidos_CodPartido=P.Partidos_CodPartido AND " .
                     "R.Puntos_CodPron = P.Puntos_CodPron " .
-                "LEFT JOIN Puntos PTS ".
+                "LEFT JOIN ".$Punto::Tabla." PTS ".
                 "ON ".
                     "PTS.CodPron = R.Puntos_CodPron " .
                 $sWhere.
@@ -136,7 +140,7 @@
 	$sQuery = "
 		SELECT ".
                 "Count($sIndexColumn)".
-                "FROM NickName N WHERE N.Pago = '1'";
+                "FROM ".$Nick::Tabla." N WHERE N.Pago = '1'";
 	$rResultTotal = mysql_query( $sQuery ) or fatal_error( 'MySQL Error: ' . mysql_errno() );
 	$aResultTotal = mysql_fetch_array($rResultTotal);
 	$iTotal = $aResultTotal[0];

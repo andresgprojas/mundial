@@ -23,7 +23,7 @@ switch ($action) {
             $html .= '<div class="panel-heading text-center">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#partido_' . $value->getCodPartido() . '">
-                                                ' . ucfirst(strftime("%A %d de %B", strtotime($value->getFecha()))) . '
+                                                ' . ucfirst(utf8_encode(strftime("%A %d de %B", strtotime($value->getFecha())))) . '
                                             </a>
                                         </h4>
                                     </div>';
