@@ -37,11 +37,13 @@ switch ($action) {
                         //                            "<input type='hidden' value='{$objeto->getCodPron()}' name='idPuntos'>".
                         '<div class="panel-heading">' . $nombreCri . '</div>' .
                         '<div class="panel-body"><p>' .
+                        "<div class='text-criterio'>".
                         "Descripcion: " . $regla . "<br>" .
-                        "Puntos a otorgar: " . $objeto->getPuntos() . "<br>";
+                        "Puntos a otorgar: " . $objeto->getPuntos() . 
+                        "</div>";
                 if ($objeto->getValores() != '-') {
                     $select = explode(',', $objeto->getValores());
-                    $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control'>";
+                    $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control select-criterio'>";
                     $htmlSel .= "<option value='-'>--</option>";
                     foreach ($select as $valor) {
                         $htmlSel .= "<option value='{$valor}'>{$valor}</option>";
@@ -82,9 +84,11 @@ switch ($action) {
                         $htmlSel .= '<div class="panel panel-primary">' .
                                 '<div class="panel-heading">' . $nombreCri . '</div>' .
                                 '<div class="panel-body">' .
+                                "<div class='text-criterio' style='width:100% !important'>".
                                 'Descripcion: ' . $regla . '<br>' .
                                 'Puntos a otorgar: ' . $objeto->getPuntos() . '<br>' .
                                 'Pronostico hecho: ' . $pron .
+                                "</div>".
                                 '</div>' .
                                 '</div>';
                         ;
@@ -107,12 +111,14 @@ switch ($action) {
                             //                            "<input type='hidden' value='{$objeto->getCodPron()}' name='idPuntos'>".
                             '<div class="panel-heading">' . $nombreCri . '</div>' .
                             '<div class="panel-body"><p>' .
+                            "<div class='text-criterio'>".
                             "Descripcion: " . $regla . "<br>" .
-                            "Puntos a otorgar: " . $objeto->getPuntos() . "<br>";
+                            "Puntos a otorgar: " . $objeto->getPuntos() . 
+                            "</div>";
 
                     if ($objeto->getValores() != '-') {
                         $select = explode(',', $objeto->getValores());
-                        $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control'>";
+                        $htmlSel .= "<select name='Form[{$objeto->getCodPron()}]' class='form-control select-criterio'>";
                         $htmlSel .= "<option value='-'>--</option>";
                         foreach ($select as $valor) {
                             $SEL = ($rtaPronP[0]->getPronostico() == $valor) ? "selected='selected'" : "";

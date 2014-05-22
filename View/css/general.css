@@ -163,3 +163,12 @@ label{
     width: 100%;
     z-index: 1060;
 }
+.text-criterio{
+    width: 70% !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+.select-criterio{
+    display: inline-block !important;
+    width: 30% !important;
+}
