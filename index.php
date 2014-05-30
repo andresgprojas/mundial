@@ -170,7 +170,7 @@
                     </div>
                     <div class="modal-body">
                         <input type="text" name="username" id="username"  class="form-control myTop" placeholder="Nickname">
-                        <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificaciï¿½n">
+                        <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificación">
                         <input type="password" name="contra" id="contra"  class="form-control myBottom" placeholder="Password">
                         <input type="button" value="Registrar" id="btnRegistrar" class="btn btn-primary">
                     </div>
