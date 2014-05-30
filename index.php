@@ -12,54 +12,60 @@
         <link href="View/css/bootstrap.css" rel="stylesheet" media="screen">
         <script src="View/js/bootstrap.min.js"></script>
         <script>
-            $(function(){
-                $("#linkRegistro").click(function(){
+            $(function() {
+                $("#linkRegistro").click(function() {
                     $('#divRegistrar').modal('show')
                     return false;
-                })
-                
-                $("#login").click(function(){
+                });
+
+                $("#linkLogIn").click(function() {
+                    $('#divLogin').modal('show')
+                    return false;
+                });
+
+
+                $("#login").click(function() {
                     var nick = $("#nickname").val();
                     var pass = $("#password").val();
                     $.ajax({
-                        type:   'POST',
-                        url:    'Controller/login',
-                        data:{
+                        type: 'POST',
+                        url: 'Controller/login',
+                        data: {
                             'nick': nick,
                             'pass': pass,
-                            'action':'login'
+                            'action': 'login'
                         },
-                        success: function(a){
-                            if (a=='1'){
+                        success: function(a) {
+                            if (a == '1') {
                                 window.location.replace("View/home");
                             }
-                            else{
+                            else {
                                 $("#salida .modal-body").html(a)
                                 $('#salida').modal('show')
                             }
                         }
                     })
                 })
-                
-                $("#btnRegistrar").click(function(){
+
+                $("#btnRegistrar").click(function() {
                     var nick = $("#username").val();
                     var pass = $("#contra").val();
                     var id = $("#identificacion").val();
                     $.ajax({
-                        type:   'POST',
-                        url:    'Controller/login',
-                        data:{
+                        type: 'POST',
+                        url: 'Controller/login',
+                        data: {
                             'action': 'save',
                             'nick': nick,
                             'pass': pass,
                             'iden': id
                         },
-                        success: function(a){
+                        success: function(a) {
                             $("#divRegistrar .modal-body").html(a)
                         }
                     })
                 })
-              
+
             })
         </script>
         <style>
@@ -104,13 +110,40 @@
         </style>
 
     </head>
-    <body>
-        <div class="jumbotron boxlogin">
-            <h2 class="form-signin-heading">Ingresa</h2>
-            <input type="text" name="nickname" id="nickname"  class="form-control myTop" required placeholder="Nickname">
-            <input type="password" name="password" id="password" class="form-control myBottom" required placeholder="Password">
-            <input type="button" value="Acceder" id="login" class="btn btn-lg btn-primary btn-block">
-            <a href="#" id="linkRegistro" class="btn btn-lg btn-success btn-block">Registrarse</a>
+    <body class="general">
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container-fluid" align="right">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li><a id="linkLogIn" href="#">Ingresa</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="intro" align="center">
+            <img src="View/images/header.png" alt="Chiken_Gol" class="img-responsive">
+        </div>
+        <div id="divLogin" class="modal fade" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Ingresa</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <input type="text" name="nickname" id="nickname"  class="form-control myTop" required placeholder="Nickname">
+                        <input type="password" name="password" id="password" class="form-control myBottom" required placeholder="Password">
+                        <input type="button" value="Acceder" id="login" class="btn btn-lg btn-primary btn-block">
+                        <a href="#" id="linkRegistro" class="btn btn-lg btn-success btn-block">Registrarse</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="salida" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -137,7 +170,7 @@
                     </div>
                     <div class="modal-body">
                         <input type="text" name="username" id="username"  class="form-control myTop" placeholder="Nickname">
-                        <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificación">
+                        <input type="text" name="identificacion" id="identificacion"  class="form-control myMiddle" placeholder="Identificaciï¿½n">
                         <input type="password" name="contra" id="contra"  class="form-control myBottom" placeholder="Password">
                         <input type="button" value="Registrar" id="btnRegistrar" class="btn btn-primary">
                     </div>

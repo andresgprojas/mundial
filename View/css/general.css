@@ -10,6 +10,9 @@ root {
     display: block;
 }
 
+.general{
+    background-color: #f2ca22;
+}
 .ui-tooltip, .arrow:after {
     background: #ebebeb;
     border: 2px solid white;
@@ -57,19 +60,19 @@ root {
     top: auto;
 }
 .body{
-     /*text-align: center;*/
-     margin: auto 10%;
-     /*float: left;*/
-     margin-bottom: 2%;
-     width: 80%;
-     /*display: inline-table;*/
+    /*text-align: center;*/
+    margin: auto 10%;
+    /*float: left;*/
+    margin-bottom: 2%;
+    width: 80%;
+    /*display: inline-table;*/
 }
 .right{
     width: 58%;
     float: left;
     margin-top: 2%;
     margin-left: 2%;
-    
+
 }
 .left{
     /*display: inline-table;*/
@@ -143,17 +146,17 @@ label{
 
 @-webkit-keyframes stretchdelay {
     0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
-20% { -webkit-transform: scaleY(1.0) }
+    20% { -webkit-transform: scaleY(1.0) }
 }
 
 @keyframes stretchdelay {
     0%, 40%, 100% { 
-    transform: scaleY(0.4);
-    -webkit-transform: scaleY(0.4);
-}  20% { 
-    transform: scaleY(1.0);
-    -webkit-transform: scaleY(1.0);
-}
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }  20% { 
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
 }
 .gray{
     background: none repeat scroll 0 0 #000000;
