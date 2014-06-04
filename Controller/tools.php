@@ -10,7 +10,7 @@ extract($_POST);
 switch ($action) {
     case 'acum':
         $n = new NickName();
-        echo '$ ' . number_format($n->getActivos() * 500000);
+        echo '$ ' . number_format($n->getActivos() * 50000);
         break;
         
     case 'rest':
