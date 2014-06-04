@@ -47,7 +47,7 @@
         default:
             
             $n = new NickName();
-            $class = $n->getByFilter(array('Nick'=>$nick, 'PWD'=>  md5($pass), 'Pago'=>'1'));
+            $class = $n->getByFilter(array('Nick'=> $nick, 'PWD'=>  md5($pass), 'Pago'=>'1'));
             if ($class===FALSE){
                 die("Ud no esta activo en el sistema");
             }

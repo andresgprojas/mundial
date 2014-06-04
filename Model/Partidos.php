@@ -161,6 +161,18 @@ class Partidos{
         return $array;
         
     }
+    
+        public function getRest(){
+        $conn = new Conn();
+        $conn->conectar();
+        $str = "SELECT DATEDIFF( (SELECT Fecha FROM ".$this::Tabla." WHERE fecha >= CURDATE() ORDER BY fecha LIMIT 1) , CURDATE() ) as rest";
+        $qry = mysql_query($str);
+        $row = mysql_fetch_array($qry);
+        return $row['rest'];
+        
+    }
+    
+    
 
 
 
