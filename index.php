@@ -64,7 +64,9 @@
                             $("#divRegistrar .modal-body").html(a)
                         }
                     })
-                })
+                });
+                $("#inputAcum").load('Controller/tools',{'action':'acum'});
+                $("#inputRest").load('Controller/tools',{'action':'rest'});
 
             })
         </script>
@@ -123,6 +125,8 @@
         </nav>
         <div id="intro" align="center">
             <img src="View/images/header.png" alt="Chiken_Gol" class="img-responsive">
+            <div >Acumulado: <h2 id="inputAcum"></h1></div>
+            <div >Próximo Encuentro En ... <h2 id="inputRest"></h1></div>
         </div>
         <div id="divLogin" class="modal fade" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

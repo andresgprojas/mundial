@@ -99,7 +99,23 @@ class NickName {
         
         return FALSE;
     }
-
+    
+    /**
+     * Obtiene la cantidad de usuarios que ya realizarón el pago!!
+     */
+    public function getActivos(){
+        $conn = new Conn();
+        $conn->conectar();
+        
+        $str = "SELECT count(*) as total FROM ".$this::Tabla." WHERE Pago =1";
+        $qry = mysql_query($str);
+        
+        if (mysql_num_rows($qry)==0)
+            return FALSE;
+        
+        $row = mysql_fetch_assoc($qry);
+        return $row['total'];
+    }
 
 
 }
