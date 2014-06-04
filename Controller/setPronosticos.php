@@ -21,19 +21,19 @@
     
     if ($rta === FALSE){
         foreach ($_POST['Form'] as $idCriterio => $valor) {
-            $Pronosticos->setNickName_Nick(mysql_real_escape_string($usuario));
-            $Pronosticos->setPartidos_CodPartido(mysql_real_escape_string($_POST['idPartido']));
-            $Pronosticos->setPuntos_CodPron(mysql_real_escape_string($idCriterio));
-            $Pronosticos->setPronostico(mysql_real_escape_string($valor));
+            $Pronosticos->setNickName_Nick(($usuario));
+            $Pronosticos->setPartidos_CodPartido(($_POST['idPartido']));
+            $Pronosticos->setPuntos_CodPron(($idCriterio));
+            $Pronosticos->setPronostico(($valor));
             $Pronosticos->setRegistro();
         }
     }
     else{
         foreach ($_POST['Form'] as $idCriterio => $valor) {
-            $Pronosticos->setNickName_Nick(mysql_real_escape_string($usuario));
-            $Pronosticos->setPartidos_CodPartido(mysql_real_escape_string($_POST['idPartido']));
-            $Pronosticos->setPuntos_CodPron(mysql_real_escape_string($idCriterio));
-            $Pronosticos->setPronostico(mysql_real_escape_string($valor));
+            $Pronosticos->setNickName_Nick(($usuario));
+            $Pronosticos->setPartidos_CodPartido(($_POST['idPartido']));
+            $Pronosticos->setPuntos_CodPron(($idCriterio));
+            $Pronosticos->setPronostico(($valor));
             $Pronosticos->updateRegistro();
         }
     }    
