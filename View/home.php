@@ -80,7 +80,8 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading">PARTIDOS</div>
                     <div class="panel-body">
-                        <p>Partidos de la primera ronda. El horario que se muestra en la hora local (Brasil)</p>
+                        <p>A continuación encontrará los partidos de la primera ronda. La hora mostrada de cada encuentro es la de Colombia;
+                        recuerde que el partido se cierra automáticamente 10 minutos antes de comenzar.</p>
                     </div>
                     <div class="panel-group" id="accordion"></div>
                 </div>
