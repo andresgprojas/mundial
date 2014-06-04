@@ -22,7 +22,10 @@
                     $('#divLogin').modal('show')
                     return false;
                 });
-
+                $("#windowHowTo").click(function() {
+                    $('#divHowTo').modal('show')
+                    return false;
+                });
 
                 $("#login").click(function() {
                     var nick = $("#nickname").val();
@@ -65,8 +68,8 @@
                         }
                     })
                 });
-                $("#inputAcum").load('Controller/tools',{'action':'acum'});
-                $("#inputRest").load('Controller/tools',{'action':'rest'});
+                $("#inputAcum").load('Controller/tools', {'action': 'acum'});
+                $("#inputRest").load('Controller/tools', {'action': 'rest'});
 
             })
         </script>
@@ -125,9 +128,61 @@
         </nav>
         <div id="intro" align="center">
             <img src="View/images/header.png" alt="Chiken_Gol" class="img-responsive">
-            <div >Acumulado: <h2 id="inputAcum"></h1></div>
-            <div >Próximo Encuentro En ... <h2 id="inputRest"></h1></div>
+            <div class="row">
+                <div class="col-md-4">
+                    Acumulado: <h2 id="inputAcum"></h1>
+                </div>
+                <div class="col-md-4">
+                    Próximo Encuentro En ... <h2 id="inputRest"></h1>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" id="windowHowTo" >¿Cómo funciona?</a>
+                </div>
+            </div>
         </div>
+        <div id="divHowTo" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">¿Cómo funciona?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <b>Paso 1:</b> Regístrate, con solo dos datos 
+                        <ol>
+                            <li>Un Nick para proteger tu identidad, este será público ya que se podrá ver desde las tablas de clasificación.</li>
+                            <li>Tu número de Identificación, será privado y se usara solo para validar que eres el dueño del Nick Ganador.</li>
+                        </ol>
+                        <b>Paso 2:</b> Paga 
+                        <ol>
+                            <li>
+                                La cuota para empezar a alimentar tus pronósticos es de COP$ 50.000
+                            </li>
+                        </ol>
+                        <b>Paso 3:</b> Ingresa tus pronósticos 
+                        <ol>
+                            <li>Tendrás 8 variables por partido para pronosticar, entre ellas marcadores, tarjetas y faltas.</li>
+                            <li>Podrás registrar tus marcadores para toda la primera ronda de forma inmediata e irlas modificando hasta diez (10) minutos antes de cada partido especifico. Las siguientes rondas se habilitaran a medida que se conozcan los equipos clasificados.</li>
+                            <li>Cada pronóstico acertado otorgara puntos que se acumularan para la premiación.</li>
+                        </ol>
+                        <b>Paso 4:</b> Gana!
+                        <ol><li>Si al final del mundial tienes uno de los tres mejores puntajes, reclama tu premio.</li></ol>
+                        <b>Aclaración</b> 
+                        <ul>
+                            <li>Tomaremos el 6% del total del bote para los gastos de administración del sitio web, el resto será divido de la siguiente forma: </li>
+                            <li>1er Puesto: 67%</li>
+                            <li>2do Puesto: 18%</li>
+                            <li>3er Puesto: 9%</li>
+
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="divLogin" class="modal fade" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
