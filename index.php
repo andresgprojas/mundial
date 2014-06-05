@@ -128,7 +128,7 @@
         </nav>
         <div id="intro" align="center">
             <img src="View/images/header.png" alt="Chiken_Gol" class="img-responsive">
-            <div class="row">
+            <div class="">
                 <div class="col-md-4">
                     Acumulado: <h2 id="inputAcum"></h1>
                 </div>
