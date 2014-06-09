@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title></title>
+        <title>Chicken-gol</title>
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
         <link rel="stylesheet" href="View/css/general.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -128,17 +128,16 @@
         </nav>
         <div id="intro" align="center">
             <img src="View/images/header.png" alt="Chiken_Gol" class="img-responsive">
-            <div class="">
-                <div class="col-md-4">
-                    Acumulado: <h2 id="inputAcum"></h1>
+            
+            	<div class="col-md-4">
+                	<div class="panel-1"><img src="View/images/dollar_coin.png"><span>Acumulado:</span><div class="sep"></div><h2 id="inputAcum">500.000</h2></div>
                 </div>
-                <div class="col-md-4">
-                    Próximo Encuentro En ... <h2 id="inputRest"></h1>
+            	<div class="col-md-4">
+                	<div class="panel-2"><img src="View/images/history.png"><span>Próximo Encuentro en ...</span><div class="sep"></div> <h2 id="inputRest">tres días</h2></div>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" id="windowHowTo" >¿Cómo funciona?</a>
-                </div>
-            </div>
+				<div class="col-md-4">
+                	<div class="panel-3"><img src="View/images/laptop_help.png"><a href="#" id="windowHowTo" >¿Cómo funciona?</a></div>
+                </div>                
         </div>
         <div id="divHowTo" class="modal fade">
             <div class="modal-dialog">

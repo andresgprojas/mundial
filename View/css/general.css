@@ -175,3 +175,22 @@ label{
     display: inline-block !important;
     width: 30% !important;
 }
+
+.container-fluid{ background:#00990E; border:none;}
+.navbar-right a{ color:#FFFFFF !important; font-size:2rem; margin-right:10%;}
+.navbar-right a:hover, .navbar-header a:hover{ color:#060 !important;}
+.navbar-inverse{ border-color:#060 !important;}
+.container-fluid{ border-radius:5px;}
+
+
+.panel-1, .panel-2, .panel-3, .panel-3 a{ margin-top:20px; color:#FFFFFF; padding-bottom:20px; border-radius:5px; padding-top:15px; font-size:20px;}
+
+
+.panel-1{ background:#2A83F4;}
+.panel-2{ background:#209726;}
+.panel-3{ background:#e0349b; text-decoration:underline;}
+
+.sep{ width:94%; height:1px; margin:2%; padding-top:10px; border-bottom:#FFFFFF dotted 2px;}
+
+#linkRegistro{ background:#209726 !important;}
+#login, #btnRegistrar{ background:#2A83F4 !important;}
