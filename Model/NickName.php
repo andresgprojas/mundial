@@ -92,10 +92,12 @@ class NickName {
         $str = "INSERT INTO ".$this::Tabla." (Nick, PWD, ID) VALUES ('{$this->Nick}', '{$this->PWD}', '{$this->ID}')";
         $qry = mysql_query($str);
 
-        $conn->cerrar();
-        
-        if ($qry === TRUE)
-            return mysql_insert_id();
+        if ($qry === TRUE){
+            $id = mysql_insert_id();
+            $conn->cerrar();
+
+            return $id;
+        }
         
         return FALSE;
     }
