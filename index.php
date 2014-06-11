@@ -70,8 +70,12 @@
                 });
                 $("#inputAcum").load('Controller/tools', {'action': 'acum'});
                 $("#inputRest").load('Controller/tools', {'action': 'rest'});
-
-            })
+                setInterval(reload, 1000);
+            });
+            function reload(){
+               $("#inputRest").load('Controller/tools', {'action': 'rest'}); 
+            }
+            
         </script>
         <style>
             .boxlogin{
@@ -133,7 +137,7 @@
                 	<div class="panel-1"><img src="View/images/dollar_coin.png"><span>Acumulado:</span><div class="sep"></div><h2 id="inputAcum">500.000</h2></div>
                 </div>
             	<div class="col-md-4">
-                	<div class="panel-2"><img src="View/images/history.png"><span>Próximo Encuentro en ...</span><div class="sep"></div> <h2 id="inputRest">tres días</h2></div>
+                	<div class="panel-2"><img src="View/images/history.png"><span>Próximo Encuentro en ...</span><div class="sep"></div> <h2 id="inputRest"></h2></div>
                 </div>
 				<div class="col-md-4">
                 	<div class="panel-3"><img src="View/images/laptop_help.png"><a href="#" id="windowHowTo" >¿Cómo funciona?</a></div>

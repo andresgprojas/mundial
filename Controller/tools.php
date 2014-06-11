@@ -15,7 +15,7 @@ switch ($action) {
         
     case 'rest':
         $n = new Partidos();
-        echo $n->getRest() . ' Dias';
+        echo $n->getRest();
         break;
 }
 ?>

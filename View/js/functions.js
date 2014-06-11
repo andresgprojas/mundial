@@ -162,6 +162,8 @@ $(function() {
 
 
 //    index-------------------------------
-
+    setInterval(reload, 1000);
 })
-        
+      function reload() {
+        $("#inputRest").load('../Controller/tools', {'action': 'rest'});
+    }      

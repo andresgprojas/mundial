@@ -81,7 +81,7 @@
                     <div class="panel-heading">PARTIDOS</div>
                     <div class="panel-body">
                         <p>A continuación encontrará los partidos de la primera ronda. La hora mostrada de cada encuentro es la de Colombia;
-                        recuerde que el partido se cierra automáticamente 10 minutos antes de comenzar.</p>
+                            recuerde que el partido se cierra automáticamente 10 minutos antes de comenzar.</p>
                     </div>
                     <div class="panel-group" id="accordion"></div>
                 </div>
@@ -110,7 +110,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="col-md-12 text-center">
+                    <div class="panel-2"><img src="../View/images/history.png"><span>Próximo Encuentro en ...</span><div class="sep"></div> <h2 id="inputRest"></h2></div>
+                </div>
             </div>
-        </div>
     </body>
 </html>

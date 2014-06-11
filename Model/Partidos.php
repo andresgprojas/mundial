@@ -1,4 +1,5 @@
 <?php
+
 require_once '../cab.inc.php';
 
 
@@ -12,7 +13,7 @@ require_once '../cab.inc.php';
  *
  * @author andresprojas
  */
-class Partidos{
+class Partidos {
 
     private $CodPartido;
     private $Partidoscol;
@@ -21,8 +22,8 @@ class Partidos{
     private $Fecha;
     private $hora;
     private $Abierto;
-    const Tabla = "partidos";
 
+    const Tabla = "partidos";
 
     public function getCodPartido() {
         return $this->CodPartido;
@@ -80,8 +81,7 @@ class Partidos{
         $this->Abierto = $Abierto;
     }
 
-    
-    public function getByFilter($filtro = array()){
+    public function getByFilter($filtro = array()) {
         $conn = new Conn();
         $conn->conectar();
         $filter = "WHERE ";
@@ -89,13 +89,13 @@ class Partidos{
             $filter .= "{$key} = '{$value}' AND ";
         }
         $filter = substr($filter, 0, -4);
-        
-        $str = "SELECT * FROM ".$this::Tabla." {$filter}";
+
+        $str = "SELECT * FROM " . $this::Tabla . " {$filter}";
         $qry = mysql_query($str) or die(mysql_error());
-        
-        if (mysql_num_rows($qry)==0)
+
+        if (mysql_num_rows($qry) == 0)
             return FALSE;
-        
+
         $row = mysql_fetch_assoc($qry);
         $myClass = new Partidos();
         $myClass->setAbierto($row['Abierto']);
@@ -105,30 +105,30 @@ class Partidos{
         $myClass->setFecha($row['Fecha']);
         $myClass->setHora($row['hora']);
         $myClass->setPartidoscol($row['Partidoscol']);
-        
+
         $conn->cerrar();
         return $myClass;
     }
-    
-    public function getAll(){
+
+    public function getAll() {
         $Equipos = new Equipos();
         $conn = new Conn();
         $conn->conectar();
-        
-        $str = "SELECT ".
-                    "a.*, ".
-                    "e.NomEq AS eq, ".
-                    "e2.NomEq AS eq2 ".
-                "FROM ".$this::Tabla." a ".
-                "INNER JOIN ".
-                    $Equipos::Tabla. " e ON a.Equipos_CodEq1 = e.CodEq ".
-                "INNER JOIN ".
-                    $Equipos::Tabla. " e2 ON a.Equipos_CodEq2 = e2.CodEq ".
+
+        $str = "SELECT " .
+                "a.*, " .
+                "e.NomEq AS eq, " .
+                "e2.NomEq AS eq2 " .
+                "FROM " . $this::Tabla . " a " .
+                "INNER JOIN " .
+                $Equipos::Tabla . " e ON a.Equipos_CodEq1 = e.CodEq " .
+                "INNER JOIN " .
+                $Equipos::Tabla . " e2 ON a.Equipos_CodEq2 = e2.CodEq " .
                 "ORDER BY Fecha,hora ASC";
         $qry = mysql_query($str) or die(mysql_error());
-        
+
         $globalArray = array();
-        while ($row = mysql_fetch_assoc($qry)){
+        while ($row = mysql_fetch_assoc($qry)) {
             $myClass = new Partidos();
             $myClass->setAbierto($row['Abierto']);
             $myClass->setCodPartido($row['CodPartido']);
@@ -136,45 +136,51 @@ class Partidos{
             $myClass->setEquipos_CodEq2($row['eq2']);
             $myClass->setFecha($row['Fecha']);
             $myClass->setHora($row['hora']);
-            
+
             $myClass->setPartidoscol($row['Partidoscol']);
-            
+
             array_push($globalArray, $myClass);
         }
-        
+
         return $globalArray;
-        
-        
     }
-    
-    public function getDinamic(){
+
+    public function getDinamic() {
         $conn = new Conn();
         $conn->conectar();
-        
-        $str = "SELECT count(Fecha) AS contador, Fecha FROM ".$this::Tabla." GROUP BY Fecha";
+
+        $str = "SELECT count(Fecha) AS contador, Fecha FROM " . $this::Tabla . " GROUP BY Fecha";
         $qry = mysql_query($str);
-        
+
         $array = array();
-        while($row = mysql_fetch_array($qry)){
+        while ($row = mysql_fetch_array($qry)) {
             $array[$row['Fecha']] = $row['contador'];
         }
         return $array;
-        
     }
-    
-        public function getRest(){
+
+    public function getRest() {
+        $hoy = date('Y-m-d H:i:s');
+
         $conn = new Conn();
         $conn->conectar();
-        $str = "SELECT DATEDIFF( (SELECT Fecha FROM ".$this::Tabla." WHERE fecha >= CURDATE() ORDER BY fecha LIMIT 1) , CURDATE() ) as rest";
+        //$str = "SELECT DATEDIFF( (SELECT Fecha FROM ".$this::Tabla." WHERE fecha >= CURDATE() ORDER BY fecha LIMIT 1) , CURDATE() ) as rest";
+        $str = "SELECT CONCAT (Fecha,' ', hora) as rest FROM " . $this::Tabla . " WHERE fecha >= CURDATE() AND Abierto = 1 ORDER BY fecha,hora  LIMIT 1";
         $qry = mysql_query($str);
         $row = mysql_fetch_array($qry);
-        return $row['rest'];
-        
+//        echo $hoy. '<br>';
+//        echo $row['rest']. '<br>';
+
+        $datetime1 = new DateTime($hoy);
+        $datetime2 = new DateTime($row['rest']);
+        $interval = $datetime2->diff($datetime1);
+        $dia = $interval->format('%d')> 9?$interval->format('%d'):'0'.$interval->format('%d');
+        $hora = $interval->format('%h')> 9?$interval->format('%h'):'0'.$interval->format('%h');
+        $min = $interval->format('%i')> 9?$interval->format('%i'):'0'.$interval->format('%i');
+        $seg = $interval->format('%s')> 9?$interval->format('%s'):'0'.$interval->format('%s');
+        $rest = $dia . utf8_encode(' Días<br>') . $hora . ':' . $min . ':' . $seg;
+        return $rest;
     }
-    
-    
-
-
 
 }
 
