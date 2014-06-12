@@ -21,11 +21,11 @@ switch ($action) {
         //obtener los pronosticos de un usuario de determinado partido
         $Pronosticos = new Pronosticos();
         $rtaPron = $Pronosticos->getByFilter(array('NickName_Nick' => $usuario, 'Partidos_CodPartido' => $partido));
-        
+
         $strTimePartido = strtotime($Dato->getFecha()." ".$Dato->getHora());
         $strTimeAhora   = strtotime('+10 minute', strtotime(date("Y-m-d H:i:s")));//cerrar 10 minutos antes
 
-        if (($rtaPron === FALSE && $Dato->getAbierto() == '0')||$strTimeAhora >= $strTimePartido)
+        if ($rtaPron === FALSE || ($strTimeAhora >= $strTimePartido && $Dato->getAbierto() == '1'))
             die('Lo sentimos, pero este partido ya fue cerrado');
         //if ($rtaPron !== FALSE && $Dato->getAbierto() == '0')die('Este partido ya fue cerrado');
 
@@ -42,7 +42,7 @@ switch ($action) {
                         '<div class="panel-body"><p>' .
                         "<div class='text-criterio'>".
                         "Descripcion: " . $regla . "<br>" .
-                        "Puntos a otorgar: " . $objeto->getPuntos() . 
+                        "Puntos a otorgar: " . $objeto->getPuntos() .
                         "</div>";
                 if ($objeto->getValores() != '-') {
                     $select = explode(',', $objeto->getValores());
@@ -116,7 +116,7 @@ switch ($action) {
                             '<div class="panel-body"><p>' .
                             "<div class='text-criterio'>".
                             "Descripcion: " . $regla . "<br>" .
-                            "Puntos a otorgar: " . $objeto->getPuntos() . 
+                            "Puntos a otorgar: " . $objeto->getPuntos() .
                             "</div>";
 
                     if ($objeto->getValores() != '-') {
