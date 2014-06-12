@@ -1,0 +1,2 @@
+UPDATE nickname SET PWD = 'dd5ae8d60a66126921f9cda2ebfb2a92'
+    WHERE Nick = 'victoria_ferrei';
