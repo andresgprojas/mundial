@@ -194,3 +194,9 @@ label{
 
 #linkRegistro{ background:#209726 !important;}
 #login, #btnRegistrar{ background:#2A83F4 !important;}
+#archivos a{
+    color: #fff !important;
+}
+#archivos a:hover{
+    color: #333 !important;
+}

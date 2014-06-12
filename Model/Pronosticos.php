@@ -118,6 +118,40 @@ class Pronosticos {
         $conn->cerrar();
     }
     
+    public function getReporte($idPartido){
+        $Nick = new NickName();
+        $Partidos = new Partidos();
+        $Puntos = new Puntos();
+        $conn = new Conn();
+        $conn->conectar();
+        
+        $str = "SELECT a.NickName_Nick, CONCAT(c.Equipos_CodEq1,' Vs ',c.Equipos_CodEq2) AS encuentro, ".
+                "IF(".
+                "(d.CodPron = 1 OR d.CodPron = 2),".
+                "IF ((d.CodPron = 1), (REPLACE( d.NomPron , '\$eq1' , c.Equipos_CodEq1)),(REPLACE( d.NomPron , '\$eq2' , c.Equipos_CodEq2))),".
+                "d.NomPron".
+                ") AS nombrePron,".
+                "IF ((a.Pronostico = '-'), 'Ninguno',a.Pronostico) AS pronostico " .
+                "FROM ".$this::Tabla." a " .
+                "INNER JOIN ".$Nick::Tabla." b ON b.Nick = a.NickName_Nick AND b.pago = '1' " .
+                "INNER JOIN ".$Partidos::Tabla." c ON a.Partidos_CodPartido = c.CodPartido AND c.CodPartido = $idPartido " .
+                "INNER JOIN ".$Puntos::Tabla." d ON d.CodPron = a.Puntos_CodPron " .
+                "ORDER BY NickName_Nick, CodPartido, CodPron";
+        $qry = mysql_query($str);
+        
+        $array = array();
+        while($row = mysql_fetch_assoc($qry)){
+            $myClass = new Pronosticos();
+            $myClass->setNickName_Nick($row['NickName_Nick']);
+            $myClass->setPartidos_CodPartido($row['encuentro']);
+            $myClass->setPronostico($row['pronostico']);
+            $myClass->setPuntos_CodPron($row['nombrePron']);
+            
+            array_push($array, $myClass);
+        }
+        $conn->cerrar();
+        return $array;
+    }
     public function getAcumulado($Nick=null){
         $conn = new Conn();
         $conn->conectar();

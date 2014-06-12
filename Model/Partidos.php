@@ -159,15 +159,19 @@ class Partidos {
         return $array;
     }
 
-    public function getRest() {
+    public function getRest($flag = FALSE) {
         $hoy = date('Y-m-d H:i:s');
 
         $conn = new Conn();
         $conn->conectar();
         //$str = "SELECT DATEDIFF( (SELECT Fecha FROM ".$this::Tabla." WHERE fecha >= CURDATE() ORDER BY fecha LIMIT 1) , CURDATE() ) as rest";
-        $str = "SELECT CONCAT (Fecha,' ', hora) as rest FROM " . $this::Tabla . " WHERE fecha >= CURDATE() AND Abierto = 1 ORDER BY fecha,hora  LIMIT 1";
+        $str = "SELECT CONCAT (Fecha,' ', hora) as rest, CodPartido FROM " . $this::Tabla . " WHERE fecha >= CURDATE() AND Abierto = 1 ORDER BY fecha,hora  LIMIT 1";
         $qry = mysql_query($str);
         $row = mysql_fetch_array($qry);
+        
+        if ($flag === TRUE)
+            return $row['CodPartido'];
+        
 //        echo $hoy. '<br>';
 //        echo $row['rest']. '<br>';
 

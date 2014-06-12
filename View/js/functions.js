@@ -4,6 +4,8 @@
  */
 
 $(function() {
+    
+    $("#archivos").load('../Controller/tools', {'action': 'archivos'});
     setInterval(function() {
 
         $('#divTabla').dataTable().fnDestroy();
