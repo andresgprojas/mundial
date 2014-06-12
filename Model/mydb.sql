@@ -184,7 +184,7 @@ CREATE TABLE `puntos` (
   `NomPron` varchar(45) DEFAULT NULL,
   `ReglaPron` varchar(250) DEFAULT NULL,
   `Puntos` int(11) NOT NULL,
-  `Valores` varchar(45) NOT NULL,
+  `Valores` text(45) NOT NULL,
   PRIMARY KEY (`CodPron`),
   UNIQUE KEY `CodPron_UNIQUE` (`CodPron`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
