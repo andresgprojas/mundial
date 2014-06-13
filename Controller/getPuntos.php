@@ -25,7 +25,7 @@ switch ($action) {
         $strTimePartido = strtotime($Dato->getFecha()." ".$Dato->getHora());
         $strTimeAhora   = strtotime('+10 minute', strtotime(date("Y-m-d H:i:s")));//cerrar 10 minutos antes
 
-        if ($rtaPron === FALSE || ($strTimeAhora >= $strTimePartido && $Dato->getAbierto() == '1'))
+        if (($rtaPron === FALSE && $Dato->getAbierto() == '0') || ($strTimeAhora >= $strTimePartido && $Dato->getAbierto() == '1'))
             die('Lo sentimos, pero este partido ya fue cerrado');
         //if ($rtaPron !== FALSE && $Dato->getAbierto() == '0')die('Este partido ya fue cerrado');
 
