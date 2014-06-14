@@ -159,6 +159,20 @@ class Partidos {
         return $array;
     }
 
+    public function cerrar($idPartido, $close = FALSE) {
+        $conn = new Conn();
+        $conn->conectar();
+        $cerrado = ($close === FALSE)?'1':'0';
+        $str = "UPDATE ".$this::Tabla." SET Abierto = '{$cerrado}' WHERE CodPartido = '{$idPartido}'";
+        $qry = mysql_query($str);
+        
+        if ($qry === TRUE)
+            return TRUE;
+        
+        return FALSE;
+        
+        $conn->cerrar();
+    }
     public function getRest($flag = FALSE) {
         $hoy = date('Y-m-d H:i:s');
 

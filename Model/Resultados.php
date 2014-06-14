@@ -60,18 +60,51 @@ class Resultados {
         if (mysql_num_rows($qry)==0)
             return FALSE;
         
-        $row = mysql_fetch_assoc($qry);
-        $myClass = new Resultados();
-        $myClass->setPartidos_CodPartido($row['Partidos_CodPartido']);
-        $myClass->setPuntos_CodPron($row['Puntos_CodPron']);
-        $myClass->setResultado($row['Resultado']);
+        $array = array();
+        while($row = mysql_fetch_assoc($qry)){
+            $myClass = new Resultados();
+            $myClass->setPartidos_CodPartido($row['Partidos_CodPartido']);
+            $myClass->setPuntos_CodPron($row['Puntos_CodPron']);
+            $myClass->setResultado($row['Resultado']);
+            array_push($array, $myClass);
+        }
         
         $conn->cerrar();
 
-        return $myClass;
+        return $array;
     }
 
+    public function setRegistro(){
 
+        $conn = new Conn();
+        $conn->conectar();
+        
+        $str = "INSERT INTO ".$this::Tabla." (Partidos_CodPartido, Puntos_CodPron, Resultado) VALUES ('{$this->getPartidos_CodPartido()}', '{$this->getPuntos_CodPron()}', '{$this->getResultado()}')";
+        $qry = mysql_query($str);
+
+        if ($qry === TRUE){
+            $id = mysql_insert_id();
+            $conn->cerrar();
+
+            return TRUE;
+        }
+        
+        return FALSE;
+    }
+    
+    public function updateRegistro(){
+        $conn = new Conn();
+        $conn->conectar();
+        $str = "UPDATE ".$this::Tabla." SET Resultado = '{$this->getResultado()}' WHERE Partidos_CodPartido = '{$this->getPartidos_CodPartido()}' AND Puntos_CodPron = '{$this->getPuntos_CodPron()}'";
+        $qry = mysql_query($str);
+        
+        if ($qry === TRUE)
+            return TRUE;
+        
+        return FALSE;
+        
+        $conn->cerrar();
+    }
 
 }
 

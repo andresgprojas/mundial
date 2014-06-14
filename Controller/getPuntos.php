@@ -73,9 +73,9 @@ switch ($action) {
                     //cerrado con datos
                     $Resultados = new Resultados();
                     $rtaResult = $Resultados->getByFilter(array('Puntos_CodPron' => $objeto->getCodPron(), 'Partidos_CodPartido' => $partido));
-                    if ($rtaResult !== FALSE) {
+                    if ($rtaResult[0] !== FALSE) {
 
-                        if ($rtaPronP[0]->getPronostico() == $rtaResult->getResultado()) {
+                        if ($rtaPronP[0]->getPronostico() == $rtaResult[0]->getResultado()) {
                             $pron = "{$rtaPronP[0]->getPronostico()}<span class='glyphicon glyphicon-ok'></span>";
                         }
                         else
