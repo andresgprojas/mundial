@@ -16,7 +16,7 @@ if (isset($_GET)) {//generar reportes
 
         $csv_end = "\n";
         $csv_sep = ";";
-        $csv_file = "../View/Archivos/" . date("Y-m-d_H-i-s") . ".csv";
+        $csv_file = "../View/Archivos/" . $idPartido."_".$rta[0]->getPartidos_CodPartido() . ".csv";
         $csv = "";
 
 
@@ -53,10 +53,15 @@ switch ($action) {
     case 'archivos':
         $directorio = opendir("../View/Archivos/"); //ruta actual
         $html = "";
+        $array = array();
         while ($archivo = readdir($directorio)) { //obtenemos un archivo y luego otro sucesivamente
             if (!is_dir($archivo)) {//verificamos si es o no un directorio
-                $html .= "<li><a href='../View/Archivos/$archivo'>" . substr($archivo, 0, -4) . "</a><li>";
+                $array[(substr($archivo, 0, -4))] = $archivo;
             }
+        }
+        ksort($array);
+        foreach ($array as $key => $value) {
+            $html .= "<li><a href='../View/Archivos/$value'>" . $key . "</a><li>";
         }
         echo $html;
         break;
