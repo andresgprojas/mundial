@@ -1,0 +1,16 @@
+INSERT INTO pronosticos VALUES('nabas90', '45', '1', '1');
+INSERT INTO pronosticos VALUES('nabas90', '45', '2', '2');
+INSERT INTO pronosticos VALUES('nabas90', '45', '3', '0-2');
+INSERT INTO pronosticos VALUES('nabas90', '45', '4', '0');
+INSERT INTO pronosticos VALUES('nabas90', '45', '5', '3-5');
+INSERT INTO pronosticos VALUES('nabas90', '45', '6', '27-29');
+INSERT INTO pronosticos VALUES('nabas90', '45', '7', '6-8');
+INSERT INTO pronosticos VALUES('nabas90', '45', '8', '11-15');
+INSERT INTO pronosticos VALUES('nabas90', '46', '1', '1');
+INSERT INTO pronosticos VALUES('nabas90', '46', '2', '1');
+INSERT INTO pronosticos VALUES('nabas90', '46', '3', '0-2');
+INSERT INTO pronosticos VALUES('nabas90', '46', '4', '0');
+INSERT INTO pronosticos VALUES('nabas90', '46', '5', '3-5');
+INSERT INTO pronosticos VALUES('nabas90', '46', '6', '27-29');
+INSERT INTO pronosticos VALUES('nabas90', '46', '7', '6-8');
+INSERT INTO pronosticos VALUES('nabas90', '46', '8', '11-15');
