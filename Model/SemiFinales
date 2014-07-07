@@ -1,0 +1,2 @@
+INSERT INTO `partidos` VALUES ('61', '', 'BRA', 'GER', '2014-07-08','15:00:00', '1');
+INSERT INTO `partidos` VALUES ('62', '', 'NED', 'ARG', '2014-07-09','15:00:00', '1');
